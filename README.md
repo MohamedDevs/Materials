@@ -1,2 +1,2 @@
 # Materials
-contains materials on different Computer Science subjects
+contains notes for different Computer Science subjects
