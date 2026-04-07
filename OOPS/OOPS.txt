@@ -1,0 +1,380 @@
+WRAPPER CLASS:
+    It is used to convert primitive types into objects.
+        <<WrapperClassName variableName = value;>>
+'final' variables:
+    CONSTANTS ~ 'final' variables once assigned values cannot be altered.
+
+
+*'this' keyword cannot be used inside a static method since 'this' refers to the current instance and static members are part of the class and not its instances.
+
+static block:
+    The code inside the static block will run only once.i.e.when the first object is created/when the class is loaded for the first time.
+        <<static {
+            //code
+        }
+        >>
+*Outside classes cannot be static.
+
+SINGLETON CLASS:
+    A class that can have only one object.
+  
+Creating a singleton class:
+  *make the constructor private.
+  *create an object and store it in a static variable so that it can be accessed without objects.
+
+INHERITANCE:
+    Inheritance is the mechanism by which one class acquires the properties of another class.
+
+        <<class DerivedClassName extends BaseClassName {
+            //code
+        }
+        >>
+    **Every class in Java is a sub class of the Object class.
+
+    *In Inheritance, the type of the reference variable determines the class that can be accessed and not the object.
+
+  Upcasting:
+    storing a Child class object into a Parent class type reference variable is known as Upcasting. The Child class object will now behave like a Parent class object.
+        << ParentClassName refVariableName = new ChildClassName(); >>
+
+  Downcasting:
+    storing a Parent class object into a Child class type reference variable is known as Downcasting. In Java, Direct downcasting is not allowed.
+        Indirect Downcasting:
+            << ParentClassName parentRefVariableName = new ChildClassName();
+               ChildClassName childRefVariableName = (ChildClassName)parentrefVariableName; >>
+
+super() method:
+    It is used to call the constructor of the immediate super class.
+
+ **both super() and this() can be called inside a constructor only.
+ **either super() or this() can be used inside a constructor and should be present as the first statement.
+
+'super' keyword:
+    'super' keyword refers to the super class object.
+
+*The private data of the Parent class cannot be accessed from the Child class.
+
+'final' classes:
+    'final' classes cannot be inherited.
+
+Types of Inheritance:
+  
+  1.Single Inheritance:
+        One class is derived from another class.
+  2.Multilevel Inheritance:
+        A class inherits from a subclass of another class.
+  3.Multiple Inheritance:
+        One class is derived from more than one class.
+      **Java doesn't support Multiple inheritance ~ The problem occurs when a data with same signature exists in both the superclasses.
+  4.Hierarchial Inheritance:
+        One class has many derived classes.
+  5.Hybrid Inheritance:
+        A combination of two or more types of Inheritance is known as Hybrid Inheritance.
+    
+--Types of Inheritance image--
+
+POLYMORPHISM:
+    Polymorphism is the ability of a variable, method or object to exist in multiple forms.
+
+Types of Polymorphism:
+  1.Compile-time/Static Polymorphism:
+        Method Overloading: methods with same name but different types or number of parameters/parameters given in different order(parameters of different Data types).
+  2.Run-time/Dynamic Polymorphism:
+        Method Overriding : method in the subclass with the same name,parameters and return type as that of the method in its superclass, then the method in the subclass is said to override the method in the superclass.
+          **In method overriding,the method that is called depends on the type of the object and not the reference variable.i.e. a Parent class reference variable refering to a Child class object will call the method of the Child class(Override) and not that of the Parent class.
+        
+      Dynamic Method Dispatch: 
+        When an overridden method is called through a superclass reference, Java determines which version(superclass/subclasses) of that method is to be executed based upon the type of the object being referred to at the time the call occurs. Thus, this determination is made at run time.
+
+'final' methods:
+    'final' methods cannot be overridden.
+
+**If the compiler knows at the compile-time which method is called, it is called early binding(final methods). If a compiler does not know at compile-time which method to call up until the run-time, it is called late binding(overridden methods).
+
+**static methods can be inherited but cannot be overridden, because they are bound at compile time, while method overriding relies on dynamic binding at runtime.
+**Variables in Java do not follow polymorphism and overriding.
+
+
+
+
+**One cannot access protected data using the objects of the Superclass outside the package not even inside the Subclass.
+
+ABSTRACTION:
+    hiding the implementation details and providing only the functionality to the user.
+
+  Abstract methods:
+    methods that are declared and not defined.
+        <<abstract returnType methodName(parameters);>>
+  
+  Abstract class:
+    A class with abstract methods. Abstract methods can only be declared inside an abstract class.
+        << abstract class ClassName {
+            //code
+        }
+        >>
+
+    *The Subclass of an Abstract class must override all of its abstract methods.
+    *One cannot create objects of an abstract class, to access its data use either the Subclass object or an anonymous inner class.
+    **Constructors cannot be abstract but there can be constructors inside an abstract class.
+    **Static methods cannot be abstract but there can be static methods inside an abstract class.
+
+Inner Class:
+    a class inside a class.
+
+  Accessing an inner class:
+    <<OuterClassName.InnerClassName refVariableName = OCrefVariableName.new InnerClassName();>>
+
+Anonymous inner class:
+    an inner class without a name, for which only a single object is created.
+
+        <<ClassName refVariableName = new ClassName() {
+            //code
+        }; 
+
+INTERFACE:
+    An interface is a mechanism to achieve multiple inheritance in Java.
+        *Interfaces contain only abstract methods.
+        *The variables inside an interface are by default static and final.
+        *The members of an interface are by default public.
+        **static methods inside an interface must be defined and cannot be overridden.
+    
+    Default methods:
+        methods that can have a body inside an interface.
+        <<default returnType methodName(parameters) {
+            //code
+        }
+        >>
+
+ANNOTATION:
+    An annotation is a tag that represents the metadata of a class, interface, method or variable.
+        <<@annotationName>>
+
+GENERICS:
+    Generics means parameterized types. Generics are mainly used for Collections where parameter type for a Collection is specified, not the base type. 
+    
+    <<CollectionName<PType> variableName = new CollectionName<>();>>
+          -B-         -P-
+
+    B ~ Base Type
+    P ~ Parameter Type
+
+    *Generics provide type safety.
+    *resolves type casting.
+
+  Type Erasure:
+    type erasure replaces all type parameters in generic types with their bounds or Object if the type parameters are unbounded at compile-time. The produced bytecode, therefore, contains only ordinary classes, interfaces, and methods.
+
+  Generic Class:
+    parameters are added to a class, also called a Template class.
+        
+        <<class ClassName<T> {
+            //methods and variables;
+        }
+        >>
+
+    Creating Objects:
+        <<ClassName<T> refVariableName = new ClassName<>();>>
+
+    Restrictions on Type Parameters:
+        *primitive types cannot be parameterized.
+        *cannot create instances of type parameters.
+        *cannot declare static variables whose types are type parameters.
+        *cannot use type parameters with lower bound.
+
+  Generic method:
+    type parameters can also be used in a method.
+        << <T> returnType methodName(T variableName) {
+            //code;
+        }
+        >>
+
+  Bounded types:
+    Bounded types are used in generics to limit the types that can be passed to type parameters.
+        <<class ClassName<T extends SuperClassName> {
+            //methods and variables;
+        }
+        >>
+    Only the instances of type of the SuperClass or of its subclasses can be passed as type parameters.
+    
+    *Java Generics supports multiple bounds.
+        <<class ClassName<T extends SuperClassName & InterfaceAName & InterfaceBName> {
+            //methods and variables;
+        }
+        >>
+
+  Wildcards:
+    Wildcard is a special type of type parameter that represents an unknown type.
+
+    Restriction on Wildcards:
+        *cannot use wildcards to define a generic class or interface.
+        *cannot use wildcards directly to specify the type of a parameter in a method. 
+            <<  --compile-time error--
+              <?> returnType methodName(? variableName) {
+                //code;
+            }
+            >>
+         It can only be used as a part of a generic code.
+            << returnType methodName(BaseType<?> variableName) {
+                //code;
+            }
+            >>
+        *When a generic method returns a generic type, we should use a type parameter instead of a wildcard.
+        *type parameters can have multiple bounds, while wildcards can’t.
+
+    Unbounded Wildcards:
+        Unbounded wildcards represent an unknown type.
+            <<BaseType<?> variableName;>>
+
+    Upper-Bounded Wildcards:
+        Upper-Bounded wildcards restrict the unknown type to be a specific type or a subtype of that type.
+            <<BaseType<? extends ClassName> variableName;>>
+    
+    Lower-Bounded Wildcards:
+        Lower-Bounded wildcards restrict the unknown type to be a specific type or a supertype of that type.
+            <<BaseType<? super ClassName> variableName;>>
+
+Comparing Objects:
+
+    Comparable:
+        Comparable is an interface defining a strategy of comparing an object with other objects of the same type.
+
+        <<class ClassName implements Comparable<ClassName> {
+            @Override
+            public int compareTo(ClassName variableName) {
+                //code to compare
+            }
+        }
+        >>
+
+Functional interface:
+    An interface with a SAM(Single Abstract Method) is a functional interface.
+
+Lambda Expressions:
+    A Lambda expression is used to implement the SAM of a functional interface.
+
+        <<InterfaceName variableName = (parameters) -> {
+                //code
+                return statement;
+        };
+        >>
+
+        *A lambda expression can be reduced further by removing the {} and return statement when the method definition contains only a single statement.
+        *() can be removed when the method takes only a single parameter.
+    
+Exceptions in Java:
+    An exception is an unexpected event that occurs during the execution of a program that disrupts the normal flow of a program.
+
+--Exception Hierarchy image--
+
+    In Java, there are two types of Exceptions:
+        1.Checked Exceptions: These are the exceptions that are checked at compile-time.
+        2.Unchecked Exceptions: These are the exceptions that are not checked at compile-time.
+
+    'try' block:
+        The statements that may throw an exception are placed inside the try block.
+
+        << try {
+            //code
+        }
+        >>
+
+    'catch' block:
+        The catch block contains code to handle the exception thrown from the try block.
+
+        <<catch(ExceptionType variableName) {
+            //code
+        }
+        >>
+    
+    'finally' block:
+        The finally block is always executed regardless an exception is thrown or caught.
+
+        <<finally {
+            //code
+        }
+        >>
+    
+    'throw' keyword:
+        The throw keyword is used to explicitly throw an exception.
+
+            << throw new ExceptionType();>>
+    
+    
+    'throws' keyword:
+        It is used to indicate that the method might throw one of the listed type exceptions. 
+            
+            <<returnType methodName(parameters) throws ExceptionType_1,ExceptionType_2,...,ExceptionType_n {
+                //code
+            }
+            >>
+        
+        *Only the first exception encountered will be thrown.
+        It is used to delegate the responsibility of exception handling to the caller(It may be a method or JVM), then the caller method is responsible to handle that exception.
+
+    try with multiple catches:
+
+        <<try {
+            //code
+            }
+          catch(ExceptionType_1 variable_1_Name) {
+            //code
+          }
+          catch(ExceptionType_2 variable_2_Name) {
+            //code
+          }
+          .
+          .
+          .
+          catch(Exception e) {
+            //code
+          }
+        >>
+
+        *the try block is excited on encountering the first exception and only that exception will be caught and handled.
+        
+    Creating Custom Exceptions:
+
+        <<class ClassName extends Exception {
+            public ClassName(String variableName) {
+                super(variableName);
+            }
+        }
+        >>
+
+Object cloning:
+    Object cloning is the process of creating an exact copy of an object.
+    
+    <<class ClassName implements Cloneable {
+        public Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
+    }
+    >>
+    -------------------------------------------------------------
+    <<ClassName copyRefVariableName = (ClassName)orginalRefVariableName.clone();>>
+
+    The default version of the clone() method creates a shallow copy of an object.
+
+    Shallow Copy:
+        A shallow copy creates a new object and copies all the fields of the object into it where both are referencing to the same memory in the heap.
+
+      *In Shallow copy, alteration made to the clone is also reflected in the original object or vice versa.
+      *However, alteration made to primitive type variables and String type variables is not reflected in the other object.
+
+    <<class ClassName implements Cloneable {
+        public Object clone() throws CloneNotSupportedException {
+            ClassName copyRefVariableName = (ClassName)super.clone();
+            copyRefVariableName.refVariableName = new ClassName[size];
+            --manual assignment of values--
+            return copyRefVariableName;
+        }
+    }
+    >>
+    -------------------------------------------------------------
+    <<ClassName copyRefVariableName = (ClassName)orginalRefVariableName.clone();>>
+    
+    Deep Copy:
+        Deep copy is the process of creating independent duplicate objects in the heap and manually assigning the values to the clone where values are supposed to be copied.
+
+      *In Deep copy, alteration made to the clone is not reflected in the original object or vice versa.
+
