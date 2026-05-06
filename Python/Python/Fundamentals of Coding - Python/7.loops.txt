@@ -1,0 +1,21 @@
+slicing in Python:
+    <<var_name[start_index:end_index+1:step]>>
+
+for loop:
+    <<for var_name in sequence:
+            #statements
+    >>
+
+range() function:
+    <<range(start_index,end_index+1,step)>>
+
+while loop:
+    <<while(condition):
+            #statements
+    >>
+
+break 
+    : exit from the loop.
+
+continue
+    : skip the current iteration.

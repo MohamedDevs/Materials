@@ -1,0 +1,11 @@
+Primitive Data Types:
+    int    : integer
+    float  : decimal
+    str    : string
+    bool   : True/False
+
+Complex Data Types:
+    list  : a mutable ordered collection of elements of the same or different data types
+    tuple : an immutable ordered collection of elements of the same or different data types
+    set   : a mutable unordered collection of elements of the same or different data types
+    dict  : a mutable ordered collection of data in the form of key-value pairs

@@ -1,0 +1,5 @@
+input()  - user input
+argv[]   - command-line input
+#import sys
+#sys.argv[index]
+print()  - system output

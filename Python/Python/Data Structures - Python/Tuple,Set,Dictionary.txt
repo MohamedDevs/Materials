@@ -1,0 +1,64 @@
+            <<tuple_name = (element_1,element_2,...,element_n)>>
+        *a tuple can contain duplicate elements.
+
+      Tuple functions:
+          len()       : length of tuple
+          max()       : max element in the tuple
+          min()       : min element in the tuple
+          .count(element)
+                      : counts the number of occurences of the specified element in the tuple
+          .index(element)
+                      : returns the first occuring index of the specified element
+          .clear()    : clear a tuple
+
+
+            <<set_name = {element_1,element_2,...,element_n}>>
+        *set objects are not subscriptable(Indexing not allowed).
+
+      Set functions:
+          .add(element)
+                      : adds an immutable element to the set
+          len()       : length of set
+          .remove(element)
+                      : deletes an element from the set
+          .discard(element)
+                      : deletes an element from the set but doesn't throw an error if element not in set.
+          .clear()    : clear a set
+          .pop()      : deletes and returns an element from the set
+          .union() or 
+                   |  : union of sets
+          .update()   : updates a set
+          .intersection()
+                or &  : intersection of sets
+          .intersection_update()
+                      : updates the set only with elements common in the sets
+          .difference() 
+                or -  : difference of sets
+          .update_difference()
+                      : updates the set by removing the elements common to the sets
+          .symmetric_difference()
+                or ^  : union of two sets - intersection of two sets
+          .isdisjoint()
+                      : check whether the sets are disjoint
+          .issubset() 
+                or <= : check whether the set is a subset of the set specified
+          .issuperset()
+                or >= : check whether the set is a superset of the set specified
+
+
+            <<dictionary_name = {key_1:value,key_2:value,...,key_n:value}>>
+        *keys are immutable and unique.
+      
+      Accessing values:
+            <<dictionary_name[key]>>
+
+      Dictionary functions:
+          .get(key)   : access a value
+          .pop(key)   : deletes the specified key-value pair and returns the value
+          .popitem()  : deletes and returns the latest entry
+          .clear()    : clears a dictionary_name
+          .keys()     : returns all keys
+          .values()   : returns all values
+          .items()    : returns all the key-value pairs
+          .copy()     : copy a dictionary
+          len()       : length of a dictionary

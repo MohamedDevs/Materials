@@ -1,0 +1,11 @@
+Variable:
+    Container for storing data
+    <<del variable_name>> : delete a variable
+
+  _ : output of previous operation
+
+local variable : variable created inside a function.
+global variable: variable created outside a function.
+
+'global' keyword:
+  It is used to create or modify global variables inside a function.

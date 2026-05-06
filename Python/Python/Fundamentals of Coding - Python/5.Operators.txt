@@ -1,0 +1,30 @@
+1.Arithmetic Operators
+    + : Addition
+    - : Subtraction
+    * : Multiplication
+   // : Division(floor)
+    / : Division(float)
+    % : Modulo Division
+   ** : exponentiation
+
+2.Assignment Operators
+    =,+=,-=,*=,//=,/=/,%=,**=
+
+3.Relational Operators
+    == : equal to
+    != : not equal to
+    >  : greater than
+    >= : greater than/equal to
+    <  : less than
+    <= : less than/equal to
+
+4.Logical Operators
+   and : logical AND
+   or  : logical OR
+   not : logical NOT
+
+5.Membership Operators
+   in       : returns True when the specified value is found within a sequence
+   not in   : returns True when the specified value is not found within a sequence
+
+--operator precedence image--

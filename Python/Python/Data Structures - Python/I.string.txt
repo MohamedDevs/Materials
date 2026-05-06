@@ -1,0 +1,54 @@
+string : a string is a sequence of characters.
+
+    string formatting:
+        
+        %-formatting:
+            %d  : int
+            %f  : float
+            %c  : character
+            %s  : string
+
+            <<%(var_name)>>
+
+        .format() function:
+            <<{value}>>
+            
+            <<.format(value=var_name)>>
+
+        f-string:
+            <<f'---{var_name}---'>>
+        *call to string functions can also be made using f-string.
+            <<f'---{var_name.function_name()}---'>>
+
+    string functions:
+
+        .strip()  : removes the leading and trailing characters specified.
+        .lstrip() : removes the leading characters specified.
+        .rstrip() : removes the trailing characters specified.
+        .split(seperator,maxsplit)  
+                  : splits the string into a list.
+        .rsplit() : splits the string into a list from the right.
+        seperator.join(iterable)
+                  : joins the 'str'-type elements of an iterable seperated by the seperator.
+        .replace(old_string,new_string,count)
+                  : replace a string with the specified string.
+        .upper()  : converts all letters of the string to uppercase.
+        .lower()  : converts all letters of the string to lowercase.
+        .capitalize()
+                  : converts first letter of the string to uppercase and rest of the string to lowercase.
+        .isupper(): returns True when all characters of the string are in uppercase else returns False.
+        .islower(): returns True when all characters of the string are in lowercase else returns False.
+        .isalpha(): returns True when all characters of the string are alphabets else returns False.
+        .isnumeric() 
+                  : returns True when all characters of the string are numbers else returns False.
+        .isalnum(): returns True when all characters all alphanumeric else returns False.
+        .count(substring,start_index,end_index+1)  
+                  : counts the number of occurences of the specified substring in a string.
+        .find(substring,start_index,end_index+1)
+                  : finds the first occuring index of the specified substring.
+        .rfind(substring,start_index,end_index+1)
+                  : finds the last occuring index of the specified substring.
+        .index(substring,start_index,end_index+1)
+                  : returns the first occuring index of the specified substring.
+        .rindex(substring,start_index,end_index+1)
+                  : returns the last occuring index of the specified substring.              

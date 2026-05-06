@@ -1,0 +1,20 @@
+list : an ordered mutable collection of elements of the same or different data types.
+    <<list_name = [element_1,element_2,...,element_n]>>
+  *a list can contain duplicate values.
+
+list functions:
+    len()       :   length of list
+    .append()   :   adds an element to the end of the list
+    .insert(indes,value)
+                :   inserts an element at the specified index
+    .extend()   :   adds the specified list to the end of the list
+    .remove(element)
+                :   removes the first occurence of the specified element from the list
+    .pop(index) :   pops out the element at the specified index/last index of the list
+    .clear()    :   clears the list
+    .index()    :   returns the first occuring index of the specified element
+    .count()    :   counts the number of occurence of the specified element
+    max()       :   returns the greatest element in the list
+    min()       :   returns the smallest element in the list
+    .sort()     :   sorts the list
+    .reverse()  :   reverses the list

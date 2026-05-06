@@ -1,0 +1,23 @@
+if statement:
+    <<if condition:
+            #statements
+    >>
+
+if-else statement:
+    <<if condition:
+            #statements
+      else:
+            #statements
+    >>
+
+if-elif-else statement:
+    <<if condition-1:
+            #statements
+      elif condition-2:
+            #statements
+      .
+      .
+      .
+      else:
+            #statements
+    >>

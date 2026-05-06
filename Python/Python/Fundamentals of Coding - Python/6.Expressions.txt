@@ -1,0 +1,25 @@
+Expression:
+    an expression is a combination of operators and operands which evaluates to a value.
+
+  Constant Expression:
+    contains only constants as operands.
+  
+  Arithmetic Expression:
+    contains one or more arithmetic operators.
+
+  Integral Expression:
+    evaluates to an integer value.
+
+  Floating-point Expression:
+    evaluates to a decimal value.
+
+  Relational Expression:
+    evaluates to a boolean value and contains one or more relational operators.
+
+  Logical Expression:
+    evaluates to a boolean value and contains one or more logical operators.
+
+  Combinational Expression:
+    combination of two or more different types of expressions.
+
+  *eval() : evaluates an expression

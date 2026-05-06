@@ -1,0 +1,28 @@
+function definition:
+	<<def function_name(parameters):
+	  		#statements
+	>>
+
+function call:
+	<<function_name(arguments)>>
+
+return
+	: used to return values from a function.
+
+pass
+	:  used as a placeholder for future code.
+
+formal arguments - values inside a function definition.
+actual arguments - values passed to a function.
+
+Types of arguments:
+	
+	1.Positional arguments : arguments passed in the order of the parameters inside a function.
+	2.keyword arguments : parameter names are used to pass arguments to a function.
+	3.default arguments : default values assigned to parameters in function definition.
+
+  Variable length arguments:
+	1.Non-keyworded arguments(*args) : the arguments are stored in a tuple.
+	2.keyworded arguments(**args) : the arguments are stored as key-value pairs.i.e. in a dicitionary.
+
+*Python is "Pass by Object Reference.i.e. Depending on the type of object the function behaves differently.Immutable objects show "pass by value" whereas mutable objects show "pass by reference".
